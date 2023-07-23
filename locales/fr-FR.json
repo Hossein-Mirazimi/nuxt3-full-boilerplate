@@ -1,0 +1,55 @@
+{
+  "locale.en-US": "English",
+  "locale.fr-FR": "French",
+  "themes": {
+    "system": "Système",
+    "light": "Clair",
+    "dark": "Sombre"
+  },
+  "cookies": {
+    "bar": {
+      "title": "🍪 Salut. Ce site utilise des cookies",
+      "description": "Nous utilisons des cookies et des technologies similaires pour personnaliser le contenu et offrir une meilleure expérience. Vous pouvez choisir de les personnaliser en cliquant sur le bouton personnaliser."
+    },
+    "modal": {
+      "title": "Personnaliser",
+      "description": "Nous utilisons différents types de cookies pour optimiser votre expérience sur notre site Web. Cliquez sur les catégories ci-dessous pour en savoir plus sur leurs objectifs. Vous pouvez choisir les types de cookies à autoriser et modifier ultérieurement vos préférences. N'oubliez pas que la désactivation des cookies peut affecter votre expérience.",
+      "privacy-policy": "Politique de confidentialité"
+    },
+    "necessary": {
+      "title": "Cookies strictement nécessaires",
+      "description": "Ces cookies sont indispensables au bon fonctionnement de mon site internet. Sans ces cookies, le site Web ne fonctionnerait pas correctement"
+    }
+  },
+  "error": {
+    "return": "Retour",
+    "page-not-found": "Page non trouvée"
+  },
+  "pages": {
+    "index": {
+      "meta": {
+        "title": "Accueil",
+        "description": "Accueil"
+      },
+      "link": "Accueil",
+      "hero": {
+        "title": "Nuxt Boilerplate",
+        "subtitle": "Non officiel",
+        "description": "Un kit de démarrage prêt à l'emploi pour toutes sortes de projets"
+      },
+      "features": {
+        "title": "Fonctionnalitées",
+        "description": "Voici la liste des plugins et des fonctionnalités ajoutées pour créer ce kit de démarrage"
+      }
+    },
+    "about": {
+      "meta": {
+        "title": "À propos",
+        "description": "À propos"
+      },
+      "link": "À propos",
+      "title": "À propos",
+      "p": "Dans un jardin luxuriant, tout est calme et sérénité. Des fleurs aux couleurs vives se mêlent aux feuillages sombres des grands arbres. Le parfum sucré des roses embaume l'air tandis que le vent fait danser les feuilles. On entend le chant mélodieux des oiseaux, comme une symphonie naturelle qui ne cesse jamais. Dans ce havre de paix, on se sent loin du monde, enveloppé par la beauté et la quiétude de la nature."
+    }
+  }
+}
