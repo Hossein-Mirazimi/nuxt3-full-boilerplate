@@ -1,13 +1,20 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { defineNuxtConfig } from "nuxt/config";
 import en from "./locales/en-US.json";
 import fr from "./locales/fr-FR.json";
+import packageJson from "./package.json";
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
   nitro: {
-    compressPublicAssets: true,
+    minify: true,
+    compressPublicAssets: {
+      brotli: true,
+    },
     logLevel: 4,
+  },
+  runtimeConfig: {
+    appVersion: packageJson.version,
+    isProduction: process.env.NODE_ENV === "production",
   },
   // This is a fix for tailwind+i18n in production mode
   // https://github.com/nuxt-modules/i18n/issues/2177
@@ -17,6 +24,8 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/eslint-module",
     "@pinia/nuxt",
+    "@nuxthq/ui",
+    "nuxt-delay-hydration",
     "@nuxtjs/device",
     "nuxt-icon",
     "@nuxt/image",
@@ -44,13 +53,27 @@ export default defineNuxtConfig({
       viewport: "width=device-width, initial-scale=1",
     },
   },
+  // https://color-mode.nuxtjs.org/
   colorMode: {
+    preference: "system", // default value of $colorMode.preference
+    fallback: "light", // fallback value if not system preference found
+    hid: "nuxt-color-mode-script",
+    globalName: "__NUXT_COLOR_MODE__",
+    componentName: "ColorScheme",
+    classPrefix: "",
     classSuffix: "",
+    storageKey: "nuxt-color-mode",
   },
   image: {
     provider: "ipx",
     quality: 80,
     format: ["png", "jpeg", "webp"],
+  },
+  // https://nuxt.com/modules/delay-hydration
+  delayHydration: {
+    mode: "init",
+    // enables nuxt-delay-hydration in dev mode for testing
+    debug: process.env.NODE_ENV === "development",
   },
   googleFonts: {
     families: {

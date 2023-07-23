@@ -32,17 +32,13 @@ useLocaleHead({
             style="height: 24px; width: 99px"
           />
         </NuxtLink>
-        <div class="flex flex-col sm:flex-row">
-          <div
-            class="mx-2 mb-3 inline-flex rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-slate-800 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 sm:mb-0"
-          >
-            <ThemeSwitcher />
-          </div>
-          <div
-            class="mx-2 inline-flex rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-slate-800 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-          >
-            <LanguageSelector />
-          </div>
+        <div class="flex flex-col gap-x-2 sm:flex-row">
+          <DevOnly>
+            <ClientOnly>
+              <ThemeSwitcher />
+            </ClientOnly>
+          </DevOnly>
+          <LanguageSelector />
         </div>
       </nav>
       <nav>
@@ -101,7 +97,7 @@ useLocaleHead({
       <slot />
     </div>
     <footer
-      class="mt-15 relative my-20 border-t border-gray-200 bg-slate-100 pb-20 dark:border-gray-600 dark:bg-slate-900"
+      class="mt-15 relative mt-20 border-t border-gray-200 bg-slate-100 pb-20 dark:border-gray-600 dark:bg-slate-900"
     >
       <div class="absolute inset-x-0 -top-3 flex items-center justify-center">
         <div class="relative flex h-10 w-14 justify-center">
