@@ -79,9 +79,9 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 7
-          run_install: false
-      - name: Install dependencies
-        run: pnpm install --config.auto-install-peers
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --auto-install-peers]
       - name: Static HTML export with Nuxt
         run: pnpm run generate
       - name: Upload artifact
