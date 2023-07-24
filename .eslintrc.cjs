@@ -19,5 +19,6 @@ module.exports = {
   plugins: ["prettier"],
   rules: {
     "no-console": "off",
+    "vue/no-multiple-template-root": "off",
   },
 };

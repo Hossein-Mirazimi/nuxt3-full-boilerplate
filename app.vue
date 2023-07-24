@@ -17,4 +17,9 @@ useHead({
       <NuxtPage />
     </NuxtLayout>
   </main>
+  <ClientOnly>
+    <Notivue v-slot="item">
+      <Notifications :item="item" />
+    </Notivue>
+  </ClientOnly>
 </template>

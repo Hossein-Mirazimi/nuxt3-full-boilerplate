@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     },
     logLevel: 4,
   },
+  css: ["notivue/notifications.css", "notivue/animations.css"],
   runtimeConfig: {
     appVersion: packageJson.version,
     isProduction: process.env.NODE_ENV === "production",
