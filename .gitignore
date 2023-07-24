@@ -47,6 +47,4 @@ node_modules
 certs/localhost-key.pem
 certs/localhost.pem
 
-pnpm-lock.yaml
-
 .unlighthouse
