@@ -58,7 +58,7 @@ export default defineNuxtConfig({
     debug: true,
     enabled: true,
     urls: () => {
-      return ["/404", "/500"];
+      return ["/404", "/500", "/", "/about"];
     },
     cacheTtl: 1000 * 60 * 60 * 24, // 1 day
   },
