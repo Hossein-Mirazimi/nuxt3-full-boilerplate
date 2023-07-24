@@ -78,10 +78,10 @@ jobs:
       - name: Install Pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 7
           run_install: false
       - name: Install dependencies
-        run: pnpm install --auto-install-peers
+        run: pnpm install --config.auto-install-peers
       - name: Static HTML export with Nuxt
         run: pnpm run generate
       - name: Upload artifact
