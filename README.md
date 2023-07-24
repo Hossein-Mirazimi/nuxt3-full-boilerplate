@@ -17,6 +17,8 @@ Install `nuxt3-full-boilerplate` with npm
 - [ ] Compress
 - [ ] Toast
 - [ ] Update Readme
+- [ ] stylelint
+- [ ] deploy link
 - [ ] Add todo list after using this template
 - [ ] add script for customize this template(like change package name and license and ...)
 - [ ] add CI&CD deploy
