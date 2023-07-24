@@ -16,7 +16,19 @@ Install `nuxt3-full-boilerplate` with npm
 - [ ] Add Persian Lang
 - [ ] Compress
 - [ ] Toast
-
+- [ ] Update Readme
+- [ ] Add todo list after using this template
+- [ ] add script for customize this template(like change package name and license and ...)
+- [ ] add CI&CD deploy
+- [ ] add Robot to keep update dependencies
+- [ ] add highlight code
+- [ ] add Lighthouse Scores
+- [ ] add test coverage
+- [ ] add E2E test
+- [ ] build analyze
+- [ ] add more efficient ESLint configuration
+- [ ] add custom Font
+- [ ] add release Script use release your website
 
 
 ## Support
