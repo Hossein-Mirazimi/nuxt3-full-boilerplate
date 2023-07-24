@@ -81,7 +81,7 @@ jobs:
           version: 7
           run_install: |
             - recursive: false
-              args: [--frozen-lockfile, --strict-peer-dependencies]
+              args: [--config.frozen-lockfile, --config.strict-peer-dependencies]
       - name: Static HTML export with Nuxt
         run: pnpm run generate
       - name: Upload artifact
