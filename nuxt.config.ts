@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   generate: { routes: ["/404", "/500"] },
   nitro: {
     prerender: {
-      routes: ["/404", "/500"],
+      routes: ["/404", "/500", "/", "/about"],
     },
 
     sitemap: {
