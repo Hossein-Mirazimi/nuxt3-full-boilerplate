@@ -5,7 +5,15 @@ import packageJson from "./package.json";
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  generate: { routes: ["/404", "/500"] },
   nitro: {
+    prerender: {
+      routes: ["/404", "/500"],
+    },
+
+    sitemap: {
+      autoAlternativeLangPrefixes: true,
+    },
     esbuild: {
       options: {
         target: "esnext",
@@ -31,6 +39,8 @@ export default defineNuxtConfig({
     "@nuxtjs/eslint-module",
     "@pinia/nuxt",
     "@nuxthq/ui",
+    "nuxt-simple-sitemap",
+    "nuxt-simple-robots",
     "nuxt-delay-hydration",
     "@nuxtjs/device",
     "nuxt-icon",
@@ -42,6 +52,23 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@dargmuesli/nuxt-cookie-control",
   ],
+  sitemap: {
+    debug: true,
+    enabled: true,
+    urls: () => {
+      return ["/404", "/500"];
+    },
+    cacheTtl: 1000 * 60 * 60 * 24, // 1 day
+  },
+  robots: {
+    allow: "*",
+    debug: true,
+    enabled: true,
+  },
+  site: {
+    debug: true,
+    url: "https://localhost:3000",
+  },
   pwa: {
     injectRegister: "auto",
     registerType: "autoUpdate",
