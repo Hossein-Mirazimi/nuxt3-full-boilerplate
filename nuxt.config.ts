@@ -6,6 +6,11 @@ import packageJson from "./package.json";
 export default defineNuxtConfig({
   devtools: { enabled: true },
   nitro: {
+    esbuild: {
+      options: {
+        target: "esnext",
+      },
+    },
     minify: true,
     compressPublicAssets: {
       brotli: true,
@@ -28,6 +33,7 @@ export default defineNuxtConfig({
     "nuxt-delay-hydration",
     "@nuxtjs/device",
     "nuxt-icon",
+    "@vite-pwa/nuxt",
     "@nuxt/image",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
@@ -35,6 +41,59 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@dargmuesli/nuxt-cookie-control",
   ],
+  pwa: {
+    injectRegister: "auto",
+    registerType: "autoUpdate",
+    workbox: {
+      runtimeCaching: [
+        { urlPattern: "/", method: "GET", handler: "CacheOnly" },
+      ],
+      globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
+      swDest: "public",
+    },
+    client: {
+      registerPlugin: true,
+      installPrompt: true,
+      periodicSyncForUpdates: 0,
+    },
+    devOptions: {
+      enabled: true,
+      suppressWarnings: true,
+      navigateFallbackAllowlist: [/^\/$/],
+      type: "module",
+    },
+    includeAssets: ["favicon.ico", "apple-touch-icon.png", "mask-icon.svg"],
+    manifest: {
+      start_url: "/",
+      name: "My Awesome App",
+      short_name: "MyApp",
+      description: "My Awesome App description",
+      theme_color: "#ffffff",
+      icons: [
+        {
+          src: "/nuxt/pwa-64x64.png",
+          sizes: "64x64",
+          type: "image/png",
+        },
+        {
+          src: "/nuxt/pwa-192x192.png",
+          sizes: "192x192",
+          type: "image/png",
+        },
+        {
+          src: "/nuxt/pwa-512x512.png",
+          sizes: "512x512",
+          type: "image/png",
+        },
+        {
+          src: "/nuxt/maskable-icon-512x512.png",
+          sizes: "512x512",
+          type: "image/png",
+          purpose: "maskable",
+        },
+      ],
+    },
+  },
   tailwindcss: {
     cssPath: "~/assets/css/tailwind.css",
     configPath: "tailwind.config.js",
