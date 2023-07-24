@@ -74,6 +74,8 @@ useLocaleHead({
                 class="flex rounded-lg border border-gray-300 bg-gray-50 px-4 py-1.5 text-gray-700 hover:cursor-pointer hover:bg-slate-500 hover:text-white dark:border-gray-600 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600"
                 target="_blank"
                 href="#"
+                aria-label="github page"
+                @click="cllick"
                 ><span class="dark:hidden"
                   ><Icon name="mdi:github" size="auto" color="black" />
                 </span>
