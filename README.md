@@ -3,7 +3,7 @@
 
 ## Installation
 
-Install `nuxt3-full-boilerplate` with npm
+Install `nuxt3-full-boilerplate` with pnpm
 
 ```bash
   pnpm install nuxt3-full-boilerplate
