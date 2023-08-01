@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import en from "./locales/en-US.json";
-import fr from "./locales/fr-FR.json";
+import en from "./locales/en.json";
+import fr from "./locales/fr.json";
 import packageJson from "./package.json";
 
 export default defineNuxtConfig({
@@ -13,9 +13,9 @@ export default defineNuxtConfig({
       routes: ["/404", "/500", "/", "/about"],
     },
 
-    sitemap: {
-      autoAlternativeLangPrefixes: true,
-    },
+    // sitemap: {
+    //   autoAlternativeLangPrefixes: true,
+    // },
     esbuild: {
       options: {
         target: "esnext",
@@ -173,7 +173,61 @@ export default defineNuxtConfig({
     preconnect: true,
   },
   i18n: {
-    vueI18n: "./i18n.config.ts",
+    baseUrl: import.meta.env.VITE_BASE_URL,
+    debug: true,
+    defaultLocale: "en",
+    types: "composition",
+    langDir: "./locales",
+    locales: [
+      {
+        code: "en",
+        iso: "en-US",
+        file: "en.json",
+        isCatchallLocale: true,
+      },
+      {
+        code: "fr",
+        iso: "fr-FR",
+        file: "fr.json",
+      },
+    ],
+    // i18nModules: [
+    //   {
+    //     langDir: "./locales",
+    //     locales: [
+    //       {
+    //         code: "en",
+    //         iso: "en-US",
+    //         file: "en.json",
+    //         isCatchallLocale: true,
+    //       },
+    //       {
+    //         code: "fr",
+    //         file: "fr.json",
+    //         iso: "fr-FR",
+    //       },
+    //     ],
+    //   },
+    // ],
+    // vueI18n: "./i18n.config.ts",
+    // legacy: false,
+    // langDir: "./locales",
+    // messages: { "en-US": en, "fr-FR": fr },
+    // baseUrl: import.meta.env.VITE_BASE_URL,
+    // strategy: "no_prefix",
+    // locales: [
+    //   {
+    //     code: "en",
+    //     iso: "en-US",
+    //     file: "en-US.json",
+    //     isCatchallLocale: true,
+    //   },
+    //   {
+    //     code: "fr",
+    //     file: "fr-FR.json",
+    //     iso: "fr-FR",
+    //   },
+    // ],
   },
   eslint: {
     lintOnStart: false,
