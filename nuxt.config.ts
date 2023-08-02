@@ -179,6 +179,7 @@ export default defineNuxtConfig({
     defaultLocale: "en",
     types: "composition",
     langDir: "./locales",
+    customRoutes: "page",
     locales: [
       {
         code: "en",
