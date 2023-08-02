@@ -9,9 +9,10 @@ export default defineNuxtConfig({
     routes: ["/", "/about", "/404", "/500"],
   },
   nitro: {
-    // prerender: {
-    //   routes: ["/404", "/500", "/", "/about"],
-    // },
+    prerender: {
+      routes: ["/404", "/500", "/", "/about"],
+      failOnError: false,
+    },
 
     // sitemap: {
     //   autoAlternativeLangPrefixes: true,
