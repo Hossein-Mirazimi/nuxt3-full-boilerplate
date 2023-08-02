@@ -36,6 +36,7 @@ export default defineNuxtConfig({
   // https://github.com/nuxt-modules/i18n/issues/2177
   experimental: {
     inlineSSRStyles: false,
+    payloadExtraction: true,
   },
   modules: [
     "@nuxtjs/eslint-module",
