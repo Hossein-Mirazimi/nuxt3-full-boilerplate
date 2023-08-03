@@ -1,14 +1,23 @@
 <script lang="ts" setup>
-const { t, locale, availableLocales } = useI18n();
-const items = availableLocales.map((_locale) => [
-  {
-    label: t(`locale.${_locale}`),
-    shortcuts: [_locale.charAt(0).toLocaleUpperCase()],
-    click: () => {
-      locale.value = _locale;
+const route = useRoute();
+const { t, locale } = useI18n();
+const localePath = useLocalePath();
+
+const localeName = computed(() =>
+  locale.value === "en" ? "English" : "Franch"
+);
+
+const items = computed(() =>
+  ["en-US", "fr-FR"].map((_locale) => [
+    {
+      label: t(`locale.${_locale}`),
+      shortcuts: [_locale.charAt(0).toLocaleUpperCase()],
+      click: () => {
+        navigateTo(localePath(route, _locale.split("-")[0]));
+      },
     },
-  },
-]);
+  ])
+);
 </script>
 <template>
   <UDropdown :items="items" :popper="{ placement: 'bottom-start' }">
@@ -19,7 +28,7 @@ const items = availableLocales.map((_locale) => [
       trailing-icon="i-heroicons-chevron-down-20-solid"
     >
       <Icon name="prime:language" size="1.5em" />
-      {{ t(`locale.${locale}`) }}
+      {{ localeName }}
     </UButton>
   </UDropdown>
 </template>

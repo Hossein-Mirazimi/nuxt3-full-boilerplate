@@ -1,3 +1,4 @@
+import path from "node:path";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import en from "./locales/en.json";
 import fr from "./locales/fr.json";
@@ -5,15 +6,7 @@ import packageJson from "./package.json";
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  // generate: {
-  //   routes: ["/", "/about", "/404", "/500"],
-  // },
   nitro: {
-    // prerender: {
-    //   routes: ["/404", "/500", "/", "/about"],
-    //   failOnError: false,
-    // },
-
     // sitemap: {
     //   autoAlternativeLangPrefixes: true,
     // },
@@ -80,6 +73,7 @@ export default defineNuxtConfig({
       runtimeCaching: [
         { urlPattern: "/", method: "GET", handler: "CacheOnly" },
       ],
+      globDirectory: path.resolve(".output", "dist/client"),
       globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
       swDest: "public",
     },
@@ -139,7 +133,7 @@ export default defineNuxtConfig({
     autoImports: ["defineStore", "acceptHMRUpdate"],
   },
   app: {
-    baseURL: "/nuxt3-full-boilerplate",
+    baseURL: "/", // nuxt3-full-boilerplate
     head: {
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
@@ -176,9 +170,9 @@ export default defineNuxtConfig({
     preconnect: true,
   },
   i18n: {
-    debug: true,
+    // debug: true,
     defaultLocale: "en",
-    types: "composition",
+    // types: "composition",
     langDir: "./locales",
     customRoutes: "page",
     locales: [
@@ -194,43 +188,8 @@ export default defineNuxtConfig({
         file: "fr.json",
       },
     ],
-    // i18nModules: [
-    //   {
-    //     langDir: "./locales",
-    //     locales: [
-    //       {
-    //         code: "en",
-    //         iso: "en-US",
-    //         file: "en.json",
-    //         isCatchallLocale: true,
-    //       },
-    //       {
-    //         code: "fr",
-    //         file: "fr.json",
-    //         iso: "fr-FR",
-    //       },
-    //     ],
-    //   },
-    // ],
     vueI18n: "./i18n.config.ts",
-    // legacy: false,
-    // langDir: "./locales",
-    // messages: { "en-US": en, "fr-FR": fr },
-    // baseUrl: import.meta.env.VITE_BASE_URL,
-    // strategy: "no_prefix",
-    // locales: [
-    //   {
-    //     code: "en",
-    //     iso: "en-US",
-    //     file: "en-US.json",
-    //     isCatchallLocale: true,
-    //   },
-    //   {
-    //     code: "fr",
-    //     file: "fr-FR.json",
-    //     iso: "fr-FR",
-    //   },
-    // ],
+    strategy: "prefix_except_default",
   },
   eslint: {
     lintOnStart: false,
