@@ -90,7 +90,7 @@ jobs:
       - name: test22
         run: |
           ls
-          cat nuxt.config.js
+          rm -rf nuxt.config.js
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
