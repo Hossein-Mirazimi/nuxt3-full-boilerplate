@@ -1,6 +1,6 @@
 <script setup>
-// This is just the boilerplate. It's intended to be removed.
 const { locale } = useI18n();
+const localePath = useLocalePath();
 useHead({
   htmlAttrs: {
     lang: locale,
@@ -16,7 +16,7 @@ useLocaleHead({
   <div class="container mx-auto max-w-screen-lg p-4 lg:p-0">
     <header>
       <nav class="mb-5 flex flex-row justify-between py-7">
-        <NuxtLink to="/" aria-label="Home" class="min-w-fit">
+        <NuxtLink :to="localePath('/')" aria-label="Home" class="min-w-fit">
           <nuxt-img
             class="h-6 dark:hidden sm:ml-3 lg:ml-0"
             src="nuxt/full-logo-green-dark.svg"
@@ -49,21 +49,21 @@ useLocaleHead({
             <li class="mr-1">
               <NuxtLink
                 class="mr-1 inline-block rounded-lg border border-gray-300 bg-gray-50 px-4 py-1.5 text-gray-700 hover:cursor-pointer hover:bg-slate-500 hover:text-white dark:border-gray-600 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600"
-                to="/"
+                :to="localePath('/')"
                 >{{ $t("pages.index.link") }}</NuxtLink
               >
             </li>
             <li>
               <NuxtLink
                 class="mx-1 inline-block rounded-lg border border-gray-300 bg-gray-50 px-4 py-1.5 text-gray-700 hover:cursor-pointer hover:bg-slate-500 hover:text-white dark:border-gray-600 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600"
-                to="/about"
+                :to="localePath('/about')"
                 >{{ $t("pages.about.link") }}</NuxtLink
               >
             </li>
             <li>
               <NuxtLink
                 class="mx-1 inline-block rounded-lg border border-gray-300 bg-gray-50 px-4 py-1.5 text-gray-700 hover:cursor-pointer hover:bg-slate-500 hover:text-white dark:border-gray-600 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600"
-                to="/404"
+                :to="localePath('/404')"
                 >404</NuxtLink
               >
             </li>
@@ -75,7 +75,6 @@ useLocaleHead({
                 target="_blank"
                 href="#"
                 aria-label="github page"
-                @click="cllick"
                 ><span class="dark:hidden"
                   ><Icon name="mdi:github" size="auto" color="black" />
                 </span>
