@@ -11,7 +11,7 @@ specifiers:
   '@nuxtjs/eslint-config-typescript': ^12.0.0
   '@nuxtjs/eslint-module': ^4.1.0
   '@nuxtjs/google-fonts': ^3.0.1
-  '@nuxtjs/i18n': ^8.0.0-beta.12
+  '@nuxtjs/i18n': ^8.0.0-beta.11
   '@nuxtjs/tailwindcss': ^6.8.0
   '@pinia/nuxt': ^0.4.11
   '@types/node': ^18.16.19
@@ -23,7 +23,7 @@ specifiers:
   eslint-plugin-nuxt: ^4.0.0
   eslint-plugin-prettier: ^4.2.1
   notivue: ^1.1.1
-  nuxt: ^3.6.3
+  nuxt: ^3.6.5
   nuxt-delay-hydration: ^1.2.1
   nuxt-icon: ^0.4.2
   nuxt-simple-robots: ^3.0.3
@@ -9442,7 +9442,7 @@ packages:
     resolution: {integrity: sha512-O7bumfWgUXlJefT1Y41SF4vsCvzeUYmnKABuOKStheCObzrkWPDmqJc+RJVU+57oFu9bITcrUq8sKFIHgjCnTg==}
     engines: {node: ^14.16.0 || >=16.10.0}
     dependencies:
-      execa: 7.1.1
+      execa: 7.2.0
     dev: true
 
   /object-assign/4.1.1:

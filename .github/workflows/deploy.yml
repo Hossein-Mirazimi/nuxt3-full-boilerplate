@@ -82,7 +82,7 @@ jobs:
           version: 7
           run_install: |
             - recursive: false
-              args: [--config.frozen-lockfile]
+        # args: [--config.frozen-lockfile]
         # , --config.strict-peer-dependencies
       - name: Static HTML export with Nuxt
         continue-on-error: true
