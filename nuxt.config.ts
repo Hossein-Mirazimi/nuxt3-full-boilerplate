@@ -212,7 +212,7 @@ export default defineNuxtConfig({
     //     ],
     //   },
     // ],
-    // vueI18n: "./i18n.config.ts",
+    vueI18n: "./i18n.config.ts",
     // legacy: false,
     // langDir: "./locales",
     // messages: { "en-US": en, "fr-FR": fr },
