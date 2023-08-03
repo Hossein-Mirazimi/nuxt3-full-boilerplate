@@ -133,7 +133,11 @@ export default defineNuxtConfig({
     autoImports: ["defineStore", "acceptHMRUpdate"],
   },
   app: {
-    baseURL: "/", // nuxt3-full-boilerplate
+    baseURL:
+      // "/nuxt3-full-boilerplate" ||
+      process.env.NODE_ENV === "production"
+        ? "/nuxt3-full-boilerplate"
+        : "/test", // nuxt3-full-boilerplate
     head: {
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
