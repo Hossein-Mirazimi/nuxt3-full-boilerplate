@@ -91,7 +91,7 @@ jobs:
       - name: Static HTML export with nuxt
         env:
           NUXT_APP_BASE_URL: /nuxt3-full-boilerplate
-        run: pnpm run generate
+        run: export NUXT_APP_BASE_URL=/nuxt3-full-boilerplate && pnpm run generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
