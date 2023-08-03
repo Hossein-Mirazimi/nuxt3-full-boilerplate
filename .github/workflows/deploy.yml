@@ -73,16 +73,17 @@ jobs:
             dist
             node_modules
             pnpm-lock.yaml
-          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('dist') }}
+          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('dist') }}-1
           restore-keys: |
-            ${{ runner.os }}-nuxt-build-
+            ${{ runner.os }}-nuxt-build-1
       - name: Install Pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 7
           run_install: |
             - recursive: false
-              args: [--config.frozen-lockfile, --config.strict-peer-dependencies]
+              args: [--config.frozen-lockfile]
+        # , --config.strict-peer-dependencies
       - name: Static HTML export with Nuxt
         continue-on-error: true
         run: pnpm run generate
