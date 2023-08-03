@@ -139,6 +139,7 @@ export default defineNuxtConfig({
     autoImports: ["defineStore", "acceptHMRUpdate"],
   },
   app: {
+    baseURL: "nuxt3-full-boilerplate",
     head: {
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
