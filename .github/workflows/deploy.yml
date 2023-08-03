@@ -89,6 +89,7 @@ jobs:
           ls
           rm -rf nuxt.config.js
           echo "remove nuxt.config"
+          ls
       - name: Static HTML export with nuxt
         env:
           NUXT_APP_BASE_URL: /nuxt3-full-boilerplate
