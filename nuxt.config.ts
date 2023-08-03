@@ -139,7 +139,7 @@ export default defineNuxtConfig({
     autoImports: ["defineStore", "acceptHMRUpdate"],
   },
   app: {
-    baseURL: "nuxt3-full-boilerplate",
+    baseURL: "/nuxt3-full-boilerplate",
     head: {
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
@@ -176,7 +176,7 @@ export default defineNuxtConfig({
     preconnect: true,
   },
   i18n: {
-    baseUrl: import.meta.env.VITE_BASE_URL,
+    // baseUrl: import.meta.env.nuxt_,
     debug: true,
     defaultLocale: "en",
     types: "composition",
@@ -213,7 +213,7 @@ export default defineNuxtConfig({
     //     ],
     //   },
     // ],
-    vueI18n: "./i18n.config.ts",
+    // vueI18n: "./i18n.config.ts",
     // legacy: false,
     // langDir: "./locales",
     // messages: { "en-US": en, "fr-FR": fr },
