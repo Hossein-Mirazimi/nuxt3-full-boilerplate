@@ -5,14 +5,14 @@ import packageJson from "./package.json";
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  generate: {
-    routes: ["/", "/about", "/404", "/500"],
-  },
+  // generate: {
+  //   routes: ["/", "/about", "/404", "/500"],
+  // },
   nitro: {
-    prerender: {
-      routes: ["/404", "/500", "/", "/about"],
-      failOnError: false,
-    },
+    // prerender: {
+    //   routes: ["/404", "/500", "/", "/about"],
+    //   failOnError: false,
+    // },
 
     // sitemap: {
     //   autoAlternativeLangPrefixes: true,
