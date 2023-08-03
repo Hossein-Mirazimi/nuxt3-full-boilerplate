@@ -73,7 +73,7 @@ export default defineNuxtConfig({
       runtimeCaching: [
         { urlPattern: "/", method: "GET", handler: "CacheOnly" },
       ],
-      globDirectory: path.resolve(".output", "dist/client"),
+      globDirectory: path.resolve(".output", "public"),
       globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
       swDest: "public",
     },
