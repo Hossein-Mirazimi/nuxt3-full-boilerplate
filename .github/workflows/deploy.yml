@@ -88,8 +88,9 @@ jobs:
         run: |
           ls
           rm -rf nuxt.config.js
-      - name: Static HTML export with Nuxt
-        continue-on-error: true
+      - name: Static HTML export with nuxte
+        env:
+          NUXT_APP_BASE_URL: nuxt3-full-boilterplate
         run: pnpm run generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
