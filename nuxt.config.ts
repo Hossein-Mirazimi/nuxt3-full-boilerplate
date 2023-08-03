@@ -176,7 +176,6 @@ export default defineNuxtConfig({
     preconnect: true,
   },
   i18n: {
-    // baseUrl: import.meta.env.nuxt_,
     debug: true,
     defaultLocale: "en",
     types: "composition",
@@ -213,7 +212,7 @@ export default defineNuxtConfig({
     //     ],
     //   },
     // ],
-    // vueI18n: "./i18n.config.ts",
+    vueI18n: "./i18n.config.ts",
     // legacy: false,
     // langDir: "./locales",
     // messages: { "en-US": en, "fr-FR": fr },
