@@ -12,16 +12,16 @@ Install `nuxt3-full-boilerplate` with pnpm
 
 ## TODo
 
-- [ ] Support RTL
-- [ ] Add Persian Lang
+- [x] Support RTL
+- [x] Add Persian Lang
 - [ ] Compress
 - [ ] Toast
 - [ ] Update Readme
 - [ ] stylelint
-- [ ] deploy link
-- [ ] Add todo list after using this template
+- [x] deploy link
+- [x] Add todo list after using this template
 - [ ] add script for customize this template(like change package name and license and ...)
-- [ ] add CI&CD deploy
+- [x] add CI&CD deploy
 - [ ] add Robot to keep update dependencies
 - [ ] add highlight code
 - [ ] add Lighthouse Scores
@@ -31,6 +31,8 @@ Install `nuxt3-full-boilerplate` with pnpm
 - [ ] add more efficient ESLint configuration
 - [ ] add custom Font
 - [ ] add release Script use release your website
+- [ ] add robot autogenerate
+- [ ] add sitemap auto-generate
 
 
 ## Support
