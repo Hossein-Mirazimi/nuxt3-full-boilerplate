@@ -38,6 +38,7 @@
     "@vite-pwa/nuxt": "^0.1.0",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "nuxt": "^3.6.5",

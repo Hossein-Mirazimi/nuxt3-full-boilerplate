@@ -15,6 +15,7 @@ module.exports = {
     "plugin:nuxt/recommended",
     "@nuxtjs/eslint-config-typescript",
     "plugin:prettier/recommended",
+    "plugin:json/recommended",
   ],
   plugins: ["prettier"],
   rules: {
