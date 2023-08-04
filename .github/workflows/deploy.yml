@@ -73,7 +73,7 @@ jobs:
             dist
             node_modules
             pnpm-lock.yaml
-          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('dist') }}-1
+          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('pnpm-lock.yaml') }}-1
           restore-keys: |
             ${{ runner.os }}-nuxt-build-1
       - name: Install Pnpm
