@@ -1,11 +1,19 @@
 <script setup lang="ts">
-useHead({
+import type { LocaleObject } from "#i18n";
+
+const { localeProperties, defaultDirection } = useI18n();
+
+useHead(computed(() => ({
   titleTemplate: (titleChunk) => {
     return titleChunk
       ? `${titleChunk} - Nuxt3 Boilerplate`
       : "Nuxt3 Boilerplate";
   },
-});
+  htmlAttrs: {
+    dir: (<LocaleObject>localeProperties.value).dir || defaultDirection || 'auto',
+  },
+})))
+
 </script>
 <template>
   <NuxtErrorBoundary>

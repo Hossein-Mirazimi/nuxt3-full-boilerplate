@@ -26,7 +26,7 @@ watch(
 </script>
 <template>
   <div>
-    <CookieControl :locale="locale.slice(0, 2)">
+    <LazyCookieControl v-if="locale !== 'fa'" :locale="locale.slice(0, 2)">
       <template #bar>
         <h3>{{ $t("cookies.bar.title") }}</h3>
         <p>{{ $t("cookies.bar.description") }}</p>
@@ -40,6 +40,6 @@ watch(
           }}</NuxtLink>
         </p>
       </template>
-    </CookieControl>
+    </LazyCookieControl>
   </div>
 </template>
