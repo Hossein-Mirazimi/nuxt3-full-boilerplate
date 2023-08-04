@@ -158,7 +158,7 @@ export default defineNuxtConfig({
   },
   // https://nuxt.com/modules/delay-hydration
   delayHydration: {
-    mode: "init",
+    // mode: "init",
     // enables nuxt-delay-hydration in dev mode for testing
     debug: process.env.NODE_ENV === "development",
   },
@@ -171,28 +171,35 @@ export default defineNuxtConfig({
     preconnect: true,
   },
   i18n: {
-    // debug: true,
     defaultLocale: "en",
-    // types: "composition",
     langDir: "./locales",
     customRoutes: "page",
     locales: [
       {
         code: "en",
         iso: "en-US",
+        dir: "ltr",
         file: "en.json",
         isCatchallLocale: true,
       },
       {
         code: "fr",
         iso: "fr-FR",
+        dir: "ltr",
         file: "fr.json",
+      },
+      {
+        code: "fa",
+        iso: "fa-IR",
+        dir: "rtl",
+        file: "fa.json",
       },
     ],
     vueI18n: "./i18n.config.ts",
     strategy: "prefix_except_default",
   },
   eslint: {
+    emitError: false,
     lintOnStart: false,
   },
   cookieControl: {

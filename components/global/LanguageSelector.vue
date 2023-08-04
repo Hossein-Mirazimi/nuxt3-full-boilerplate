@@ -1,22 +1,23 @@
 <script lang="ts" setup>
+import type { LocaleObject } from "#i18n";
+
 const route = useRoute();
-const { t, locale } = useI18n();
+const { t, localeProperties, locales } = useI18n();
 const localePath = useLocalePath();
 
-const localeName = computed(() =>
-  locale.value === "en" ? "English" : "Franch"
-);
+const localeName = computed(() => t(`locale.${localeProperties.value.iso}`));
 
 const items = computed(() =>
-  ["en-US", "fr-FR"].map((_locale) => [
+  // eslint-disable-next-line eslint
+  (<Array<LocaleObject>>locales.value).map(_locale => ([
     {
-      label: t(`locale.${_locale}`),
-      shortcuts: [_locale.charAt(0).toLocaleUpperCase()],
+      label: t(`locale.${_locale.iso}`),
+      shortcuts: [_locale.code],
       click: () => {
-        navigateTo(localePath(route, _locale.split("-")[0]));
+        navigateTo(localePath(route, _locale.code));
       },
     },
-  ])
+  ]))
 );
 </script>
 <template>

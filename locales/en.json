@@ -1,6 +1,7 @@
 {
   "locale.en-US": "English",
   "locale.fr-FR": "French",
+  "locale.fa-IR": "فارسی",
   "themes": {
     "system": "System",
     "light": "Light",
